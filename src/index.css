@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* Vibrant Nature Theme Palette */
+  
+  /* Primary Actions & Highlights - Vibrant Coral/Sunset */
+  --color-primary-50: #fff1f2;
+  --color-primary-100: #ffe4e6;
+  --color-primary-200: #fecdd3;
+  --color-primary-300: #fda4af;
+  --color-primary-400: #fb7185;
+  --color-primary-500: #f43f5e;  /* Dynamic Red/Pink */
+  --color-primary-600: #e11d48;
+  --color-primary-700: #be123c;
+  --color-primary-800: #9f1239;
+  --color-primary-900: #881337;
+
+  /* Secondary/Backgrounds - Clean & Crisp */
+  --color-stone-50: #f8fafc;
+  --color-stone-100: #f1f5f9;
+  --color-stone-200: #e2e8f0;
+  --color-stone-300: #cbd5e1;
+  --color-stone-400: #94a3b8;
+  --color-stone-500: #64748b;
+  --color-stone-600: #475569;
+  --color-stone-700: #334155;
+  --color-stone-800: #1e293b;
+  --color-stone-900: #0f172a;
+  --color-stone-950: #020617; /* Deep Navy Background for Dark Mode */
+
+  /* Accent/Info - Electric Teal/Cyan */
+  --color-sky-50: #ecfeff;
+  --color-sky-100: #cffafe;
+  --color-sky-200: #a5f3fc;
+  --color-sky-300: #67e8f9;
+  --color-sky-400: #22d3ee;
+  --color-sky-500: #06b6d4;
+  --color-sky-600: #0891b2;
+  --color-sky-700: #0e7490;
+  --color-sky-800: #155e75;
+  --color-sky-900: #164e63;
+  
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Outfit', ui-serif, system-ui, sans-serif; /* Modern feeling serif replacement */
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-lg shadow-primary-500/5;
+  }
+  
+  .dark .glass-panel {
+    @apply bg-stone-900/80 border-stone-800/50 shadow-none;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white font-bold py-2 px-4 rounded-xl shadow-lg shadow-primary-500/20 hover:shadow-primary-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200;
+  }
+}
+
+:root {
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--color-stone-800);
+  background-color: var(--color-stone-50);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+    background-color: var(--color-stone-950);
+    color: var(--color-stone-100);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
