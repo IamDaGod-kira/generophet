@@ -44,11 +44,26 @@ export default function Learn() {
                         </div>
                     ) : (
                         <div className="h-full flex flex-col items-center justify-center text-stone-400 space-y-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-50"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            <p>Ask a question below to get started!</p>
-                            <div className="flex gap-2 text-sm">
-                                <span className="bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full cursor-pointer hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors" onClick={() => setQuery("What is a Punnett Square?")}>What is a Punnett Square?</span>
-                                <span className="bg-stone-100 dark:bg-stone-800 px-3 py-1 rounded-full cursor-pointer hover:bg-stone-200 dark:hover:bg-stone-700 transition-colors" onClick={() => setQuery("Explain dominant vs recessive")}>Dominant vs Recessive</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="opacity-50 text-primary-500 mb-4"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            <p className="text-lg font-medium text-stone-600 dark:text-stone-300">What would you like to learn today?</p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-2xl mt-6 px-4">
+                                {[
+                                    "How to use a Punnett Square?",
+                                    "Explain Dominant vs Recessive",
+                                    "What is Genotype vs Phenotype?",
+                                    "Law of Segregation",
+                                    "Incomplete Dominance examples",
+                                    "What is a Dihybrid Cross?"
+                                ].map((topic) => (
+                                    <button
+                                        key={topic}
+                                        onClick={() => setQuery(topic)}
+                                        className="text-left px-4 py-3 rounded-xl bg-stone-50 dark:bg-stone-800 hover:bg-primary-50 dark:hover:bg-primary-900/20 border border-stone-200 dark:border-stone-700 hover:border-primary-200 dark:hover:border-primary-800 transition-all text-sm font-medium text-stone-600 dark:text-stone-300 hover:text-primary-700 dark:hover:text-primary-400"
+                                    >
+                                        {topic}
+                                    </button>
+                                ))}
                             </div>
                         </div>
                     )}
