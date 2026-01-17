@@ -22,8 +22,8 @@ Generophet is a modern, interactive genetic inheritance simulator and educationa
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/IamDaGod-kira/generophet.git
-    cd generophet
+    git clone https://github.com/IamDaGod-kira/geneprophet.git
+    cd geneprophet
     ```
 
 2.  Install dependencies:
